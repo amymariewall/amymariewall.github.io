@@ -1,34 +1,20 @@
-# Basic
-name:               "Sumeet Jain"
+name: Amy Wall
+description: "Software Engineer"
+meta_description: "Amy Wall, Software Engineer"
 
-# URL
-baseurl:            ""
-#baseurl:            "" #For Root Domain
-permalink:          /:year/:month/:day/:title.html
+markdown: kramdown
+highlighter: rouge
+logo: false
+paginate: 15
+baseurl: ""
+domain_name: "amymariewall.github.io"
+# google_analytics: "UA-XXXXXXXX-X"
+plugins: [jekyll-paginate]
 
-# Markdown
-markdown:           kramdown
+# Details for the RSS feed generator
+url: ""
+author: "Amy Wall"
 
-# Navigation
-nav:
-  - name:           "About"
-    href:           "/about"
-
-# Sass
-sass:
-  style:            :compressed
-
-# Scopes
-defaults:
-  -
-    scope:
-      path:         ""
-      type:         "pages"
-    values:
-      layout:       "page"
-  -
-    scope:
-      path:         ""
-      type:         "posts"
-    values:
-      layout:       "post"
+# Disqus config
+disqus-shortname: ""
+disable_disk_cache: "true"

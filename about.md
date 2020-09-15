@@ -1,6 +1,6 @@
 ---
-title: About
-permalink: /about/
+layout: page
+title: About me 
 ---
 
-Talk about yourself here.
+This is a static page. It could be an 'about page' if you'd like.
