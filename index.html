@@ -1,41 +1,83 @@
 ---
 layout: default
+title: Home
+cover: false
+about: 'about.html'
 ---
 
+<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+    <nav class="main-nav overlay clearfix">
+            {% if page.logo %}
+                <a class="blog-logo" href="{{ site.baseurl }}">
+                    <img src="{{ page.logo }}" alt="Blog Logo" />
+                </a>
+            {% endif %}
+        
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">{{ site.name }}</h1>
+            
+            <img class="profile-img" src='/assets/images/profile2.png' alt="Author's profile picture" nopin="nopin" />
+            
+            <h2 class="page-description">
+                <!-- {% if site.description %} {{ site.description }}. {% endif %} -->
+                <!-- {% if page.about %} <a href='{{page.about | relative_url}}'> About me </a> {% endif %} -->
+                Software Engineer
+            </h2>
 
-<!-- Main -->
-<div id="main">
-    <section>
-        {% for post in site.posts limit:1 %}
-            <header class="major">
-                <h2>{{ post.title }}</h2>
-                <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.author %} • {{ post.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-            </header>
-
-            <section>
-                {{ post.content }}
-            </section>
-        {% endfor %}
-    </section>
-    <section>
-        <div class="row">
-            {% for post in site.posts offset:1 %}
-
-                <article class="{% cycle '6u', '6u$' %} 12u(small)">
-                    <header>
-                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                    </header>
-                    <section>
-                        {{ post.excerpt }}
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="{{ post.url }}" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-
-            {% endfor %}
         </div>
-    </section>
-</div>
+
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+
+
+<main id="content" class="content" role="main">
+
+    <div class="main-menu">
+        <a class="button" href="https://www.linkedin.com/in/amymariewall/" target="_blank"> <img src="/assets/images/linkedin_circle_gray.png"/>LinkedIn</a>
+        <a class="button button--github" href="https://github.com/amymariewall/" target="_blank"> <img src="/assets/images/github_gray.png"/>GitHub</a>
+        <a class="button button--articles" href="https://discover.opscompass.com/blog/opscompass-for-cloud-upskilling" target="_blank"> <img src="/assets/images/web_icon_gray.png"/>Articles</a>
+    </div>
+    <div class="post">
+        Amy is a software engineer from Nebraska who builds software with Ruby, Rails, PHP, JavaScript, HTML, CSS, and SQL. Her additional adventures include: mastering cloud computing, honing her DevOps skills, learning Vue.js, and fiddling with data analysis in Python.
+      <br>
+      <br>  
+
+        She is a former writer, editor, and project manager who still really enjoys all 3, especially the writing part. She’s based in Berlin, Germany, and the UK. A remote worker for a US based company for the past 3 years, she loves discovering new ways to collaborate — whether across the room or across the Atlantic. 
+    </div>
+
+
+<!--     <div class="extra-pagination inner">
+        {% include pagination.html %}
+    </div> -->
+
+<!--     {% for post in paginator.posts %}
+
+    <article class="post">
+        <header class="post-header">
+            <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        </header>
+        <section class="post-excerpt">
+            {{ post.excerpt }} <a class="read-more" href="{{ post.url | relative_url }}">&raquo;</a>
+        </section>
+        <footer class="post-meta">
+            {% if site.author %}
+                <img class="author-thumb" src="{{'/assets/images/profile.png' | relative_url}}" alt="Author's profile picture" nopin="nopin" />
+                {{ site.author }}
+            {% endif %}
+            {% if post.categories.size > 0 %} 
+                {{ post.categories | array_to_sentence_string | prepend: 'on ' }} 
+            {% endif %}
+            <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+                {{ post.date | date_to_string }}
+            </time> 
+        </footer>
+    </article>
+
+    {% endfor %} -->
+
+    <!-- {% include pagination.html %} -->
+
+</main>
